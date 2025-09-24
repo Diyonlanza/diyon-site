@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Diyon — Portfolio</title>
+  <meta name="description" content="Modern, minimal personal website." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#0b0d12; --card:#121520; --text:#e7ecf5; --muted:#a6b0c3; --accent:#5eead4; }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{font-weight:800;letter-spacing:0.5px}
+    .nav a{opacity:.85}
+    .nav a:hover{opacity:1}
+    .btn{background:var(--accent);color:#081019;padding:10px 16px;border-radius:12px;font-weight:600;display:inline-block}
+    .btn:hover{filter:brightness(1.05)}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
+    .hero{margin-top:48px;align-items:center}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.06);border-radius:18px;padding:24px}
+    .shadow{box-shadow:0 20px 50px rgba(0,0,0,.4)}
+    .muted{color:var(--muted)}
+    .pill{display:inline-flex;gap:8px;align-items:center;background:rgba(94,234,212,.1);border:1px solid rgba(94,234,212,.3);color:var(--accent);padding:6px 10px;border-radius:999px;font-size:12px;font-weight:600}
+    .section{margin-top:64px}
+    .project{transition:transform .2s ease, box-shadow .2s ease}
+    .project:hover{transform:translateY(-4px)}
+    .footer{margin:64px 0 24px;color:var(--muted);font-size:14px;text-align:center}
+
+    /* Responsive */
+    @media (max-width: 900px){
+      .grid{grid-template-columns:1fr}
+      .hero-visual{order:-1}
+    }
+  </style>
+</head>
+<body>
+  <header class="container">
+    <nav class="nav">
+      <div class="brand">Diyon</div>
+      <div style="display:flex;gap:16px;align-items:center">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="btn">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- Hero -->
+    <section class="grid hero">
+      <div style="grid-column:span 7;display:flex;flex-direction:column;gap:18px">
+        <span class="pill">🚀 Building AI • Web • Edits</span>
+        <h1 style="font-size:44px;line-height:1.1;margin:0">I craft delightful experiences with <span style="color:var(--accent)">AI</span> and clean web design.</h1>
+        <p class="muted" style="font-size:18px;margin:0">Student, creator, and quick study. I build fast, iterate faster, and ship products people actually use.</p>
+        <div style="display:flex;gap:12px;margin-top:8px">
+          <a class="btn" href="#projects">See Projects</a>
+          <a style="padding:10px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.12)" href="#about">Learn More</a>
+        </div>
+      </div>
+      <div class="hero-visual" style="grid-column:span 5">
+        <div class="card shadow" style="height:280px;display:grid;place-items:center;font-weight:700;font-size:18px">
+          <div style="text-align:center">
+            <div style="opacity:.9">Your Featured Project</div>
+            <div class="muted" style="margin-top:8px;font-weight:400">(Drop a screenshot here)</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <h2 style="margin:0 0 16px 0">Projects</h2>
+      <div class="grid">
+        <article class="card project">
+          <h3 style="margin-top:0">Summarizer Lite</h3>
+          <p class="muted">A fast, minimal text summarizer API built with Python. Deployed on Render with a React front end.</p>
+          <a class="btn" href="#">View</a>
+        </article>
+        <article class="card project">
+          <h3 style="margin-top:0">Edit Pack v1</h3>
+          <p class="muted">After Effects preset pack: velocity, glow, and glitch transitions for TikTok/YouTube.</p>
+          <a class="btn" href="#">Download</a>
+        </article>
+        <article class="card project">
+          <h3 style="margin-top:0">Portfolio Site</h3>
+          <p class="muted">This site — lightweight, responsive, and aesthetic. Built with vanilla HTML/CSS.</p>
+          <a class="btn" href="#">Source</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section card">
+      <h2 style="margin-top:0">About</h2>
+      <p class="muted">I’m Diyon — an apt learner obsessed with building and shipping. My focus areas are AI products, modern front ends, and crisp motion design.</p>
+      <ul class="muted">
+        <li>Python, Pandas, scikit-learn (AI foundations)</li>
+        <li>React, Tailwind (modern UI)</li>
+        <li>After Effects (Saber, Twixtor, Particular)</li>
+      </ul>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="card">
+        <h2 style="margin-top:0">Contact</h2>
+        <p class="muted">Open for collaborations, freelance, and product ideas.</p>
+        <form onsubmit="event.preventDefault(); alert('Thanks! I\'ll get back to you soon.');">
+          <div class="grid" style="grid-template-columns:repeat(2,1fr)">
+            <input required placeholder="Name" style="padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:transparent;color:var(--text)">
+            <input required type="email" placeholder="Email" style="padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:transparent;color:var(--text)">
+          </div>
+          <textarea required placeholder="Your message" rows="5" style="margin-top:12px;width:100%;padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:transparent;color:var(--text)"></textarea>
+          <button class="btn" style="margin-top:12px" type="submit">Send</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    © <span id="year"></span> Diyon — Built with love & grit.
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
